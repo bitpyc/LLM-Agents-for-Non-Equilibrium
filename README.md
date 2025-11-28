@@ -121,7 +121,7 @@ python LLM_buyer.py --model gpt-4o --J 0.85 --rho 0.8 --ratio 0.5 --Nt 400
 
 ### 4.4 run experiments
 
-run several settings at the same time using scripts.
+Run several settings at the same time:
 ```bash
 bash equation_based.sh
 bash LLM_seller.sh
