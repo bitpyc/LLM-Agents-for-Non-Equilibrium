@@ -7,7 +7,7 @@ This repository contains the code used in our paper to simulate a competitive ma
 
 The goal is to study how LLM-driven agents, endowed with boundedly rational and impression-based decision processes, can reproduce non-equilibrium market phenomena such as alternating monopolies and phase transitions.
 
-The code is written for clarity and reproducibility so that reviewers can easily rerun the main experiments.
+The code is written for clarity and reproducibility.
 
 ---
 
@@ -69,8 +69,8 @@ Override if using local LLM:
 ├── equation_based.py
 ├── equation_based.sh
 ├── LLM_seller.py
-├── LLM_buyer.py 
 ├── LLM_seller.sh
+├── LLM_buyer.py 
 ├── LLM_buyer.sh
 ├── requirements.txt
 └── README.md
@@ -106,7 +106,7 @@ python equation_based.py --J 0.4 --rho 0.8 --Nt 2000
 ### 4.2 LLM-Driven Sellers
 
 ```bash
-python LLM_seller.py --model gpt-4o --J 0.4 --rho 0.8 --Nt 400 --fig 1
+python LLM_seller.py --model gpt-4o --J 0.85 --rho 0.8 --Nt 400
 ```
 
 ---
@@ -114,11 +114,21 @@ python LLM_seller.py --model gpt-4o --J 0.4 --rho 0.8 --Nt 400 --fig 1
 ### 4.3 LLM-Driven Buyers
 
 ```bash
-python LLM_buyer.py --model gpt-4o --J 0.4 --rho 0.8 --ratio 0.5 --Nt 400 --fig 1
+python LLM_buyer.py --model gpt-4o --J 0.85 --rho 0.8 --ratio 0.5 --Nt 400
 ```
 
 ---
 
+### 4.4 run experiments
+
+run several settings at the same time using scripts.
+```bash
+bash equation_based.sh
+bash LLM_seller.sh
+bash LLM_buyer.sh
+```
+
+---
 ## 5. Reproducibility Notes
 
 - Baseline uses fixed seed.
